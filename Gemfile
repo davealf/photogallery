@@ -21,6 +21,11 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'carrierwave-aws'
+gem 'aws-sdk-rails'
+gem 'fog'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 
 
 gem 'autoprefixer-rails'
