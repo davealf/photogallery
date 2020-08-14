@@ -4,4 +4,12 @@ class ApplicationJob < ActiveJob::Base
 
   # Most jobs are safe to ignore if the underlying records are no longer available
   # discard_on ActiveJob::DeserializationError
+  class MyJob
+  include Sidekiq::Worker
+
+  def perform(args)
+    # block that will be retried in case of failure
+  end
+end
+
 end

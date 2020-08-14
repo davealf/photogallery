@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   resources :images, :categories
 
   root 'images#index'
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

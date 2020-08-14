@@ -7,9 +7,11 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
+      FileWorker.perform_async()
       flash[:notice] = "Image Created"
 
       redirect_to root_path
+
     else
       render 'new'
     end
@@ -18,7 +20,7 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
-
+    FileWorker.perform_async()
     flash[notice] = "Image Removed"
 
     redirect_to images_path
