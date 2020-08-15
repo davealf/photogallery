@@ -1,11 +1,12 @@
 class ImagesController < ApplicationController
   def new
   	@image = Image.new
+    FileWorker.perform_async()
   end
 
   def create
     @image = Image.new(image_params)
-
+    FileWorker.perform_async()
     if @image.save
       FileWorker.perform_async()
       flash[:notice] = "Image Created"

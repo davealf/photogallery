@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
   get "upload" => "images#new", :as => "upload"
   get 'images/create'
   get 'images/destroy'
