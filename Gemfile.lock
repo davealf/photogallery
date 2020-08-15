@@ -381,6 +381,8 @@ GEM
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-protection (2.0.8.1)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -423,7 +425,7 @@ GEM
       json (>= 1.8)
       nokogiri (~> 1.5)
       optimist (~> 3.0)
-    redis (4.2.1)
+    redis (4.1.4)
     regexp_parser (1.7.1)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -455,10 +457,11 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sidekiq (6.1.1)
-      connection_pool (>= 2.2.2)
+    sidekiq (5.2.9)
+      connection_pool (~> 2.2, >= 2.2.2)
       rack (~> 2.0)
-      redis (>= 4.2.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 4.2)
     signet (0.14.0)
       addressable (~> 2.3)
       faraday (>= 0.17.3, < 2.0)
@@ -535,7 +538,7 @@ DEPENDENCIES
   rmagick
   sass-rails (>= 6)
   selenium-webdriver
-  sidekiq (~> 6.1.0)
+  sidekiq (~> 5.2.8)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

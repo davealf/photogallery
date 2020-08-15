@@ -26,7 +26,7 @@ gem 'aws-sdk-rails'
 gem 'fog'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'sidekiq', '~> 6.1.0'
+gem 'sidekiq', '~> 5.2.8'
 
 
 gem 'autoprefixer-rails'
